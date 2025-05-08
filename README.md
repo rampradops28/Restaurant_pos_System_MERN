@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🍽️ **Restaurant POS System**  
 
 A full-featured **Restaurant POS System** built using the **MERN Stack** to streamline restaurant operations, enhance customer experience, and manage orders, payments, and inventory with ease.
@@ -81,3 +82,6 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
 💡 To contribute, please check out the **CONTRIBUTING.md** for guidelines.
 
 ⭐ If you find this project helpful, don't forget to **star** the repository! 🌟
+=======
+#
+>>>>>>> 7cfd946a682df00436dd9a1ef0e2492402a1f567
