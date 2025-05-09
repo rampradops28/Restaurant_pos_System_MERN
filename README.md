@@ -1,13 +1,24 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 🍽️ **Restaurant POS System**  
 
 A full-featured **Restaurant POS System** built using the **MERN Stack** to streamline restaurant operations, enhance customer experience, and manage orders, payments, and inventory with ease.
+=======
+# 🍽️ **Restaurant POS System**  
+
+A powerful MERN Stack-based **Point-of-Sale system** tailored for restaurants to simplify daily operations, improve customer service, and efficiently handle orders, payments, reservations, and stock tracking.
+>>>>>>> 15cbca5b7226733acde966794a3909b63cfbf370
 
 ## ✨ **Features**
 
 - 🍽️ **Order Management**  
+<<<<<<< HEAD
   Efficiently manage customer orders with real-time updates and status tracking.
 
+=======
+  Manage dine-in and takeout orders smoothly with instant updates and status flows.
+  
+>>>>>>> 15cbca5b7226733acde966794a3909b63cfbf370
 - 🪑 **Table Reservations**  
   Simplify table bookings and manage reservations directly from the POS.
 
@@ -37,6 +48,7 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
 ---
 <br>
 
+<<<<<<< HEAD
 ## 📺 **YouTube Playlist**
 
 🎬 Follow the complete tutorial series on building this Restaurant POS System on YouTube:  
@@ -60,6 +72,8 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
 
 ---
 
+=======
+>>>>>>> 15cbca5b7226733acde966794a3909b63cfbf370
 ## 🖼️ **Project Screenshots**
 
 <table>
@@ -76,6 +90,7 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
   </tr>
 </table>
 
+<<<<<<< HEAD
 
 ✨ Feel free to explore, contribute, and enhance the project! 🚀
 
@@ -85,3 +100,6 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
 =======
 #
 >>>>>>> 7cfd946a682df00436dd9a1ef0e2492402a1f567
+=======
+ 
+>>>>>>> 15cbca5b7226733acde966794a3909b63cfbf370
