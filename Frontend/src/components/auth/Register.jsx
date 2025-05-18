@@ -99,7 +99,7 @@ const Signup = () => {
       <div className="role-selection">
         <p>Choose your role</p>
         <div className="role-buttons">
-          {["Waiter", "Cashier", "Admin"].map((role) => (
+          {["Waiter","User", "Admin"].map((role) => (
             <button
               type="button"
               key={role}

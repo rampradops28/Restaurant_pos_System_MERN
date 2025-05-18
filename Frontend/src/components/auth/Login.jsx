@@ -4,7 +4,8 @@ import { login } from "../../https";
 import { enqueueSnackbar } from "notistack";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/userSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
+import GradientText from '../../reactbits/GradientText.jsx'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -64,6 +65,17 @@ const Login = () => {
       </div>
 
       <input type="submit" value="Login" className="btn solid" />
+
+      {/* <button className="btn solid">
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="custom-class"
+      >
+        Login
+      </GradientText>
+    </button> */}
     </form>
   );
 };

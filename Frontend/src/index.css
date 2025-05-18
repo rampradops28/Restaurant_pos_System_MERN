@@ -9,30 +9,74 @@
 } */
 
 /* FullScreenLoader.css */
+:root {
+  --primary: #ffcc00;
+  --secondary: #222;
+}
 
-.fullscreen-loader {
+.load-man {
+  animation: load-man-travel 1.2s infinite linear;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--secondary),
+    var(--secondary) 5%,
+    transparent 5%,
+    transparent 35%
+  );
+  height: 10px;
+  left: 50%;
+  margin-top: -5px;
+  position: absolute;
+  top: 50%;
+  width: 200px;
+
+    /* Centering it */
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1f1f1f; /* White background with some transparency */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Ensure it's on top of other content */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure it stays on top */
 }
 
-.spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #f6b100; /* Blue color for spinner */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
+.load-man:after,
+.load-man:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  border: 25px solid var(--primary);
+  border-radius: 100%;
+  margin-top: -25px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.load-man:before {
+  --close: -90;
+  animation: load-man-chomp 0.35s infinite linear;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.load-man:after {
+  --close: 0;
+  animation: load-man-chomp 0.35s infinite linear;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+@keyframes load-man-travel {
+  to {
+    background-position: -200px 0;
+  }
+}
+
+@keyframes load-man-chomp {
+  0% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(calc(var(--close) * 1deg));
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
 }

@@ -1,11 +1,8 @@
-import React from 'react'
+// src/components/LoadMan.jsx
+import React from "react"; 
 
-const FullScreenLoader = () => {
-  return (
-    <div className='fullscreen-loader'>
-        <div className='spinner'></div>
-    </div>
-  )
-}
+const LoadMan = () => {
+  return <div className="load-man"></div>;
+};
 
-export default FullScreenLoader
+export default LoadMan;

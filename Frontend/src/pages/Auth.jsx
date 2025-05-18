@@ -3,6 +3,8 @@ import Login from "../components/auth/Login.jsx";
 import Signup from "../components/auth/Register.jsx";
 import loginimg from '../assets/images/login.svg';
 import registerimg from '../assets/images/register.svg';
+// import GradientText from './../reactbits/GradientText.jsx'
+
 
 const Auth = () => {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
@@ -22,10 +24,18 @@ const Auth = () => {
             <h3>New here?</h3>
             <p>Join us and start your journey today!</p>
             <button
-              className="btn transparent"
+              className="btn transparent solid"
               onClick={() => setIsSignUpMode(true)}
             >
-              Sign up
+               Sign up
+              {/* <GradientText
+                      colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                      animationSpeed={3}
+                      showBorder={false}
+                      className="custom-class"
+                    >
+                      
+              </GradientText> */}
             </button>
           </div>
           <img src={loginimg} className="image" alt="login visual" />
