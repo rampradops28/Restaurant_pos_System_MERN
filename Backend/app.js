@@ -13,7 +13,7 @@ connectDB();
 // Middlewares
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:5173']
+    origin: ['https://restaurant-pos-system-mern.vercel.app']
 }))
 app.use(express.json()); // parse incoming request in json format
 app.use(cookieParser())
