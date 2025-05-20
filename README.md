@@ -50,118 +50,128 @@ A full-featured **Restaurant POS System** built using the **MERN Stack** to stre
 git clone https://github.com/rampradops28/Restaurant_pos_System_MERN.git
 cd Restaurant_pos_System_MERN
 
-
-Make sure to set the VITE_BACKEND_URL in environment variables during deployment.
----
-
 🔧 Backend Setup
-📁 Navigate to Backend
-bash
-Copy
-Edit
-cd backend
-📥 Install Dependencies
-bash
-Copy
-Edit
-npm install
-📝 Create .env File
+----------------
+
+### 📁 Navigate to Backend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcd backend   `
+
+### 📥 Install Dependencies
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm install   `
+
+### 📝 Create .env File
+
 Create a .env file in the backend directory and add the following:
 
-env
-Copy
-Edit
-PORT=8000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopyEditPORT=8000  MONGODB_URI=your_mongodb_connection_string  JWT_SECRET=your_jwt_secret  RAZORPAY_KEY_ID=your_razorpay_key_id  RAZORPAY_KEY_SECRET=your_razorpay_key_secret  RAZORPAY_WEBHOOK_SECRET=your_webhook_secret   `
 
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
-▶️ Start the Backend Server
-bash
-Copy
-Edit
-npm start
-By default, the server runs on:
-🔗 http://localhost:8000
+### ▶️ Start the Backend Server
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm start   `
+
+By default, the server runs on:🔗 [http://localhost:8000](http://localhost:8000)
 
 After deployment, make sure to update your frontend .env with the deployed backend URL.
 
 🌐 Frontend Setup
-📁 Navigate to Frontend
-bash
-Copy
-Edit
-cd ../frontend
-📥 Install Dependencies
-bash
-Copy
-Edit
-npm install
-📝 Create .env File
+-----------------
+
+### 📁 Navigate to Frontend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditcd ../frontend   `
+
+### 📥 Install Dependencies
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm install   `
+
+### 📝 Create .env File
+
 Create a .env file in the frontend directory and add the following:
 
-env
-Copy
-Edit
-VITE_BACKEND_URL=https://restaurant-pos-system-mern.onrender.com
-VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
-▶️ Start the Frontend
-bash
-Copy
-Edit
-npm run dev
-Frontend will be available at:
-🔗 http://localhost:5173 (or as shown in your terminal)
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   envCopyEditVITE_BACKEND_URL=https://restaurant-pos-system-mern.onrender.com  VITE_RAZORPAY_KEY_ID=your_razorpay_key_id   `
+
+### ▶️ Start the Frontend
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyEditnpm run dev   `
+
+Frontend will be available at:🔗 [http://localhost:5173](http://localhost:5173) (or as shown in your terminal)
 
 📦 Deployment
-🔙 Backend (Render)
-The backend is deployed on Render:
-🔗 https://restaurant-pos-system-mern.onrender.com
+-------------
 
-Ensure your backend environment variables are set under the Environment tab in Render.
+### 🔙 Backend (Render)
 
-🖥️ Frontend (Vercel/Netlify)
-Deploy the frontend folder using Vercel or Netlify. Set your production environment variables:
+The backend is deployed on Render:🔗 [https://restaurant-pos-system-mern.onrender.com](https://restaurant-pos-system-mern.onrender.com)
 
-env
-Copy
-Edit
-VITE_BACKEND_URL=https://restaurant-pos-system-mern.onrender.com
-VITE_RAZORPAY_KEY_ID=your_live_razorpay_key_id
-✅ Environment Variables Reference
-🔙 Backend .env
-env
-Copy
-Edit
-PORT=8000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-RAZORPAY_KEY_ID=your_key_id
-RAZORPAY_KEY_SECRET=your_key_secret
-RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
-🖥️ Frontend .env
-env
-Copy
-Edit
-VITE_BACKEND_URL=https://restaurant-pos-system-mern.onrender.com
-VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
- 
-## 🖼️ **Project Screenshots**
+Ensure your backend environment variables are set in Render under the Environment tab.
 
-<table>
-  <tr>
-    <td><img src="https://res.cloudinary.com/amritrajmaurya/image/upload/v1740502772/ibjxvy5o1ikbsdebrjky.png" alt="Screenshot 1" width="300"/></td>
-    <td><img src="https://res.cloudinary.com/amritrajmaurya/image/upload/v1740502773/ietao6dnw6yjsh4f71zn.png" alt="Screenshot 2" width="300"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://res.cloudinary.com/amritrajmaurya/image/upload/v1740502772/vesokdfpa1jb7ytm9abi.png" alt="Screenshot 3" width="300"/></td>
-    <td><img src="https://res.cloudinary.com/amritrajmaurya/image/upload/v1740502772/setoqzhzbwbp9udpri1f.png" alt="Screenshot 4" width="300"/></td>
-  </tr>
-  <tr>
-    <td><img src="https://res.cloudinary.com/amritrajmaurya/image/upload/v1740502772/fc4tiwzdoisqwac1j01y.png" alt="Screenshot 5" width="300"/></td>
-  </tr>
-</table>
+### 🖥️ Frontend (Vercel)
 
+Deploy the frontend folder using Vercel or Netlify. Don’t forget to set your production environment variables.
+
+Ensure your backend environment variables are set in vercel under the Environment tab.
+
+> 📂 Folder Structure (Overview)
+> 
+> **├── Backend**
+> 
+> **│ ├── config**
+> 
+> **│ ├── controllers**
+> 
+> **│ ├── middlewares**
+> 
+> **│ ├── models**
+> 
+> **│ ├── routes**
+> 
+> **│ ├── app.js**
+> 
+> **│ ├── package.json**
+> 
+> **│ └── sample.env**
+> 
+> **├── Frontend**
+> 
+> **│ ├── public**
+> 
+> **│ ├── src**
+> 
+> **│ │ ├── Animations**
+> 
+> **│ │ ├── assets**
+> 
+> **│ │ ├── components**
+> 
+> **│ │ ├── constants**
+> 
+> **│ │ ├── hooks**
+> 
+> **│ │ ├── https**
+> 
+> **│ │ ├── pages**
+> 
+> **│ │ ├── reactbits**
+> 
+> **│ │ ├── redux**
+> 
+> **│ │ └── utils**
+> 
+> **│ ├── package.json**
+> 
+> **│ ├── tailwind.config.js**
+> 
+> **│ └── vite.config.js**
+> 
+> **└── README.md**
+> 
+> **📬 Contact**
+> 
+> Feel free to fork, open an issue, or contribute!
+> 
+> 👤 Developed by [@rampradops28](https://github.com/rampradops28)🌟 Show some love by starring the repo!
+> 
+> Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   yamlCopyEdit  ---  Let me know if you want this directly uploaded to GitHub or saved as a file.   `
   
