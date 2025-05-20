@@ -51,7 +51,6 @@ git clone https://github.com/rampradops28/Restaurant_pos_System_MERN.git
 cd Restaurant_pos_System_MERN
 
 🔧 Backend Setup
-----------------
 
 ### 📁 Navigate to Backend
 
