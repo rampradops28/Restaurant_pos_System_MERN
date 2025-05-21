@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Login from "../components/auth/Login.jsx";
 import Signup from "../components/auth/Register.jsx";
-import loginimg from '../assets/images/register.svg';
-import registerimg from '../assets/images/Character 34.svg';
+import loginimg from '../assets/images/Character 34.svg';
+import registerimg from '../assets/images/register.svg';
 // import GradientText from './../reactbits/GradientText.jsx'
 
 
