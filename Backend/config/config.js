@@ -10,4 +10,6 @@ const config = Object.freeze({
     razorpyWebhookSecret: process.env.RAZORPAY_WEBHOOK_SECRET
 });
 
+//  Object.freeze locks the object, so values inside config can’t be modified later.
+
 module.exports = config;

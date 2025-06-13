@@ -10,6 +10,8 @@ const tableSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+
+    // Link to the current Order by its ID (reference to Order collection)
     currentOrder: {type: mongoose.Schema.Types.ObjectId, ref: "Order"}
 });
 

@@ -40,13 +40,15 @@ const userSchema = new mongoose.Schema({
     }
 }, { timestamps : true })
 
-userSchema.pre('save', async function (next) {
-    if(!this.isModified('password')){
+
+// Password Hashing Middleware
+userSchema.pre('save', async function (next) { // If the password is new or modified, hash it before saving.
+    if(!this.isModified('password')){ // avoids rehashing
         next();
     }
 
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
-})
+}) 
 
 module.exports = mongoose.model("User", userSchema);

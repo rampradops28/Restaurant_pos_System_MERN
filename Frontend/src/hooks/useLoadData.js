@@ -20,7 +20,7 @@ const useLoadData = () => {
         dispatch(removeUser());
         navigate("/auth");
         console.log(error);
-      }finally{
+      } finally {
         setIsLoading(false);
       }
     };
