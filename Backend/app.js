@@ -13,7 +13,9 @@ connectDB();
 // Allow frontend (localhost:5173) to access backend with cookies
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173",
+        "https://restaurant-pos-system-mern.vercel.app"
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
 }));
