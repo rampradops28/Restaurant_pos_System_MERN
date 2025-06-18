@@ -11,5 +11,4 @@ const config = Object.freeze({
 });
 
 //  Object.freeze locks the object, so values inside config can’t be modified later.
-
-module.exports = config;
+ 

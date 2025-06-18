@@ -1,6 +1,6 @@
 const createHttpError = require("http-errors");
 const jwt = require("jsonwebtoken");
-const config = require("../config/config");
+const config = require("../config/config").default;
 const User = require("../models/userModel");
 
 

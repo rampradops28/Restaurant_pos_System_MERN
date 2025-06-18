@@ -1,6 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/database");
-const config = require("./config/config");
+const config = require("./config/config").default;
 const globalErrorHandler = require("./middlewares/globalErrorHandler");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
