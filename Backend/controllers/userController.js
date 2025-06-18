@@ -64,9 +64,8 @@ const login = async (req, res, next) => {
         res.cookie('accessToken', accessToken, {
             maxAge: 1000 * 60 * 60 * 24 * 30,
             httpOnly: true,
-            sameSite: 'lax',
-            secure: true,
-            domain: 'restaurant-pos-system-mern.onrender.com'
+            sameSite: 'none',
+            secure: true
         });
 
         res.status(200).json({success: true, message: "User login successfully!", 
