@@ -26,6 +26,7 @@ const Login = () => {
     onSuccess: (res) => {
       const { data } = res;
       const { _id, name, email, phone, role } = data.data;
+      localStorage.setItem("accessToken", data.accessToken);
       dispatch(setUser({ _id, name, email, phone, role }));
       navigate("/");
     },

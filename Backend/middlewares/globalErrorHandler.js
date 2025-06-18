@@ -1,4 +1,4 @@
-const config = require("../config/config").default;
+const config = require("../config/config");
 
  // Global middleware to handle errors and send formatted JSON responses
 

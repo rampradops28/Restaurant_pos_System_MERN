@@ -7,13 +7,13 @@ const User = require("../models/userModel");
 const isVerifiedUser = async (req, res, next) => {
     try{
 
-        const { accessToken } = req.cookies;
-        
-        if(!accessToken){
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
             const error = createHttpError(401, "Please provide token!");
             return next(error);
         }
 
+        const accessToken = authHeader.split(" ")[1];
         const decodeToken = jwt.verify(accessToken, config.accessTokenSecret);
 
         const user = await User.findById(decodeToken._id);
