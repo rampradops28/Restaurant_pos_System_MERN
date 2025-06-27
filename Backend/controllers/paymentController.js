@@ -1,9 +1,17 @@
 const Razorpay = require("razorpay");
-const config = require("../config/config").default;
+const config = require("../config/config");
 const crypto = require("crypto");
 const Payment = require("../models/paymentModel");
 
 const createOrder = async (req, res, next) => {
+  // Check if Razorpay configuration is available
+  if (!config.razorpayKeyId || !config.razorpaySecretKey) {
+    return res.status(500).json({ 
+      success: false, 
+      message: "Payment gateway configuration is not available. Please contact administrator." 
+    });
+  }
+
   const razorpay = new Razorpay({
     key_id: config.razorpayKeyId,
     key_secret: config.razorpaySecretKey,
@@ -12,7 +20,7 @@ const createOrder = async (req, res, next) => {
   try {
     const { amount } = req.body;
     const options = {
-      amount: amount * 100, // Amount in paisa (1 INR = 100 paisa)
+      amount: Math.round(amount * 100), // Amount in paisa (1 INR = 100 paisa), must be integer
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
     };
@@ -27,6 +35,14 @@ const createOrder = async (req, res, next) => {
 
 const verifyPayment = async (req, res, next) => {
   try {
+    // Check if Razorpay configuration is available
+    if (!config.razorpaySecretKey) {
+      return res.status(500).json({ 
+        success: false, 
+        message: "Payment gateway configuration is not available. Please contact administrator." 
+      });
+    }
+
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
       req.body;
 
@@ -38,8 +54,7 @@ const verifyPayment = async (req, res, next) => {
     if (expectedSignature === razorpay_signature) {
       res.json({ success: true, message: "Payment verified successfully!" });
     } else {
-      const error = createHttpError(400, "Payment verification failed!");
-      return next(error);
+      res.status(400).json({ success: false, message: "Payment verification failed!" });
     }
   } catch (error) {
     next(error);
@@ -48,6 +63,14 @@ const verifyPayment = async (req, res, next) => {
 
 const webHookVerification = async (req, res, next) => {
   try {
+    // Check if Razorpay configuration is available
+    if (!config.razorpyWebhookSecret) {
+      return res.status(500).json({ 
+        success: false, 
+        message: "Payment gateway configuration is not available. Please contact administrator." 
+      });
+    }
+
     const secret = config.razorpyWebhookSecret;
     const signature = req.headers["x-razorpay-signature"];
 
@@ -85,8 +108,7 @@ const webHookVerification = async (req, res, next) => {
 
       res.json({ success: true });
     } else {
-      const error = createHttpError(400, "❌ Invalid Signature!");
-      return next(error);
+      res.status(400).json({ success: false, message: "❌ Invalid Signature!" });
     }
   } catch (error) {
     next(error);

@@ -7,14 +7,17 @@ import {
 } from "react-router-dom";
 import { Home, Auth, Orders, Tables, Menu, Dashboard } from "./pages";
 import Header from "./components/shared/Header"; 
+import BottomNav from "./components/shared/BottomNav";
 import { useSelector } from "react-redux";
 import useLoadData from "./hooks/useLoadData";
 import FullScreenLoader from "./components/shared/FullScreenLoader"
+import { ThemeProvider } from "./context/ThemeContext";
 
 function Layout() {
   const isLoading = useLoadData();
   const location = useLocation();
   const hideHeaderRoutes = ["/auth"];
+  const hideBottomNavRoutes = ["/auth", "/dashboard"];
   const { isAuth } = useSelector(state => state.user);
 
   if(isLoading) return <FullScreenLoader />
@@ -66,6 +69,7 @@ function Layout() {
         />
         <Route path="*" element={<div>Not Found</div>} />
       </Routes> 
+      {!hideBottomNavRoutes.includes(location.pathname) && <BottomNav />}
     </>
   );
 }
@@ -81,9 +85,11 @@ function ProtectedRoutes({ children }) {
 
 function App() {
   return (
-    <Router>
-      <Layout />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Layout />
+      </Router>
+    </ThemeProvider>
   );
 }
 

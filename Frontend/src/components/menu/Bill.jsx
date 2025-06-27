@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { removeAllItems } from "../../redux/slices/cartSlice";
 import { removeCustomer } from "../../redux/slices/customerSlice";
 import Invoice from "../invoice/Invoice";
+import { useTheme } from "../../context/ThemeContext";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -29,6 +30,7 @@ function loadScript(src) {
 
 const Bill = () => {
   const dispatch = useDispatch();
+  const { isDarkMode } = useTheme();
 
   const customerData = useSelector((state) => state.customer);
   const cartData = useSelector((state) => state.cart);
@@ -115,7 +117,7 @@ const Bill = () => {
             email: "",
             contact: customerData.phone,
           },
-          theme: { color: "#025cca" },
+          theme: { color: "#736a5f" },
         };
 
         const rzp = new window.Razorpay(options);
@@ -190,62 +192,113 @@ const Bill = () => {
   });
 
   return (
-    <>
-      <div className="flex items-center justify-between px-5 mt-2">
-        <p className="text-xs text-[#ababab] font-medium mt-2">
-          Items({cartData.lenght})
-        </p>
-        <h1 className="text-[#f5f5f5] text-md font-bold">
-          ₹{total.toFixed(2)}
-        </h1>
+    <div className="p-4">
+      <h2 className={`text-lg font-bold mb-4 ${
+        isDarkMode ? 'text-dark-100' : 'text-gray-900'
+      }`}>
+        Bill Summary
+      </h2>
+      
+      <div className="space-y-3">
+        <div className="flex justify-between">
+          <span className={`text-sm ${
+            isDarkMode ? 'text-dark-400' : 'text-gray-600'
+          }`}>
+            Subtotal
+          </span>
+          <span className={`text-sm font-semibold ${
+            isDarkMode ? 'text-dark-100' : 'text-gray-900'
+          }`}>
+            ₹{total.toFixed(2)}
+          </span>
+        </div>
+        
+        <div className="flex justify-between">
+          <span className={`text-sm ${
+            isDarkMode ? 'text-dark-400' : 'text-gray-600'
+          }`}>
+            Tax (18%)
+          </span>
+          <span className={`text-sm font-semibold ${
+            isDarkMode ? 'text-dark-100' : 'text-gray-900'
+          }`}>
+            ₹{tax.toFixed(2)}
+          </span>
+        </div>
+        
+        <hr className={`border-t ${
+          isDarkMode ? 'border-dark-600' : 'border-gray-300'
+        }`} />
+        
+        <div className="flex justify-between">
+          <span className={`text-lg font-bold ${
+            isDarkMode ? 'text-dark-100' : 'text-gray-900'
+          }`}>
+            Total
+          </span>
+          <span className={`text-lg font-bold ${
+            isDarkMode ? 'text-restaurant-400' : 'text-restaurant-600'
+          }`}>
+            ₹{totalPriceWithTax.toFixed(2)}
+          </span>
+        </div>
       </div>
-      <div className="flex items-center justify-between px-5 mt-2">
-        <p className="text-xs text-[#ababab] font-medium mt-2">Tax(5.25%)</p>
-        <h1 className="text-[#f5f5f5] text-md font-bold">₹{tax.toFixed(2)}</h1>
-      </div>
-      <div className="flex items-center justify-between px-5 mt-2">
-        <p className="text-xs text-[#ababab] font-medium mt-2">
-          Total With Tax
-        </p>
-        <h1 className="text-[#f5f5f5] text-md font-bold">
-          ₹{totalPriceWithTax.toFixed(2)}
-        </h1>
-      </div>
-      <div className="flex items-center gap-3 px-5 mt-4">
+      
+      <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-5 mt-4">
         <button
           onClick={() => setPaymentMethod("Cash")}
-          className={`bg-[#1f1f1f] px-4 py-3 w-full rounded-lg text-[#ababab] font-semibold ${
-            paymentMethod === "Cash" ? "bg-[#383737]" : ""
+          className={`px-3 sm:px-4 py-2 sm:py-3 w-full rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ${
+            paymentMethod === "Cash" 
+              ? isDarkMode 
+                ? 'bg-dark-800 text-restaurant-400' 
+                : 'bg-gray-200 text-restaurant-600'
+              : isDarkMode 
+                ? 'bg-dark-900 text-dark-300 hover:bg-dark-800 border border-dark-700' 
+                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-md'
           }`}
         >
           Cash
         </button>
         <button
           onClick={() => setPaymentMethod("Online")}
-          className={`bg-[#1f1f1f] px-4 py-3 w-full rounded-lg text-[#ababab] font-semibold ${
-            paymentMethod === "Online" ? "bg-[#383737]" : ""
+          className={`px-3 sm:px-4 py-2 sm:py-3 w-full rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ${
+            paymentMethod === "Online" 
+              ? isDarkMode 
+                ? 'bg-dark-800 text-restaurant-400' 
+                : 'bg-gray-200 text-restaurant-600'
+              : isDarkMode 
+                ? 'bg-dark-900 text-dark-300 hover:bg-dark-800 border border-dark-700' 
+                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-md'
           }`}
         >
           Online
         </button>
       </div>
 
-      <div className="flex items-center gap-3 px-5 mt-4">
-        <button className="bg-[#025cca] px-4 py-3 w-full rounded-lg text-[#f5f5f5] font-semibold text-lg">
+      <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-5 mt-4">
+        <button className={`px-3 sm:px-4 py-2 sm:py-3 w-full rounded-lg font-semibold text-sm sm:text-lg transition-all duration-300 hover:scale-105 ${
+          isDarkMode 
+            ? 'bg-dark-800 text-dark-100 hover:bg-dark-700' 
+            : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+        }`}>
           Print Receipt
         </button>
         <button
           onClick={handlePlaceOrder}
-          className="bg-[#f6b100] px-4 py-3 w-full rounded-lg text-[#1f1f1f] font-semibold text-lg"
+          className={`w-full mt-6 py-3 px-4 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 ${
+            isDarkMode 
+              ? 'bg-restaurant-600 hover:bg-restaurant-500' 
+              : 'bg-restaurant-500 hover:bg-restaurant-600'
+          }`}
         >
-          Place Order
+          Proceed to Payment
         </button>
       </div>
 
       {showInvoice && (
         <Invoice orderInfo={orderInfo} setShowInvoice={setShowInvoice} />
       )}
-    </>
+    </div>
   );
 };
 
